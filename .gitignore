@@ -1,0 +1,7 @@
+.env
+
+php/*
+!php/.keep
+
+dbdata/*
+!dbdata/.keep
