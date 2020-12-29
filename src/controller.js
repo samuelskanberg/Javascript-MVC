@@ -1,6 +1,5 @@
 class Controller {
     constructor(model, view) {
-        console.log("Controller");
         this.model = model;
         this.view = view;
 
@@ -9,13 +8,12 @@ class Controller {
         });
 
         this.model.shoppingListUpdatedEvent.addListener(items => {
-            console.log("controller listener");
             this.view.updateList(items);
         });
-    }
 
-    run() {
-        this.view.render();
+        this.view.removeItemEvent.addListener(id => {
+            this.model.deleteItem(id);
+        });
     }
 }
 
