@@ -6,5 +6,7 @@ window.onload = function() {
     console.log("Window loaded");
     let m = new Model();
     let v = new View();
-    let c = new Controller();
+    let c = new Controller(m, v);
+
+    c.run();
 };
